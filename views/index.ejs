@@ -1,48 +1,58 @@
 <%- include('partials/header') %>
 
 <main>
-    <section class="hero">
-        <h1>O Poder das Cores</h1>
-        <p>Aprenda como a colorimetria influencia o mundo ao seu redor.</p>
+    <!-- SEÇÃO HERO EM TELA CHEIA (BANNER IGUAL AO SITE QUE VOCÊ MANDOU) -->
+    <!-- Alterado o nome da classe aqui para puxar o tamanho menor -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>O Poder das Cores</h1>
+            <p>Aprenda como a colorimetria influencia o mundo ao seu redor.</p>
+        </div>
     </section>
+
 
     <section class="conteudo-principal">
         <h2>O que é Colorimetria?</h2>
         <p>A colorimetria é o estudo científico e prático da medição e combinação das cores. Ela analisa características como temperatura, saturação e contraste para criar harmonias visuais perfeitas em diversas áreas.</p>
     </section>
 
-    <!-- Aqui você pode criar a seção do Círculo Cromático futuramente -->
-
     <section class="categorias">
         <h2>Onde a Colorimetria está presente?</h2>
         <div class="grid-cards">
             
-            <a href="/roupas" class="card-box">
+            <!-- Card Roupas - Rosa/Lilás transparente -->
+            <a href="/roupas" class="card-box" style="background-color: rgba(230, 50, 120, 0.12);">
                 <img src="/img/roupas.jpg" alt="Roupas e Moda">
                 <h3>ROUPAS & MODA</h3>
             </a>
 
-            <a href="/make" class="card-box">
+            <!-- Card Maquiagem - Nude/Pele transparente -->
+            <a href="/make" class="card-box" style="background-color: rgba(220, 160, 130, 0.15);">
                 <img src="/img/maquiagem.jpg" alt="Maquiagem">
                 <h3>MAQUIAGEM</h3>
             </a>
 
-            <a href="/cabelo" class="card-box">
+            <!-- Card Cabelo - Dourado/Mel transparente -->
+            <a href="/cabelo" class="card-box" style="background-color: rgba(210, 160, 50, 0.12);">
                 <img src="/img/cabelo.jpg" alt="Cabelo">
                 <h3>CABELO</h3>
             </a>
 
-            <a href="/arquitetura" class="card-box">
+            <!-- Card Arquitetura - Azul acinzentado transparente -->
+            <a href="/arquitetura" class="card-box" style="background-color: rgba(70, 130, 180, 0.12);">
                 <img src="/img/arquitetura.jpg" alt="Arquitetura & Decoração">
                 <h3>ARQUITETURA & DECORAÇÃO</h3>
             </a>
 
-            <a href="/arte" class="card-box">
+            <!-- Card Arte - Roxo transparente -->
+            <a href="/arte" class="card-box" style="background-color: rgba(140, 80, 200, 0.12);">
                 <img src="/img/arte.jpg" alt="Arte & Pintura">
                 <h3>ARTE & PINTURA</h3>
             </a>
 
-            <a href="/cinema" class="card-box">
+            <!-- Card Cinema - Vermelho suave transparente -->
+            <a href="/cinema" class="card-box" style="background-color: rgba(220, 50, 50, 0.12);">
                 <img src="/img/cinema.jpg" alt="Cinema & Foto">
                 <h3>CINEMA & FOTO</h3>
             </a>

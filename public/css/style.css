@@ -1,107 +1,151 @@
-/* Importando as fontes elegantes (Montserrat para títulos e Inter para textos) */
+/* Importando as fontes elegantes do Google Fonts de forma correta */
 @import url('https://googleapis.com');
 
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa; /* Um fundo levemente off-white fica mais chique */
-    color: #333;
+    background-color: #0b0b0b; /* Fundo preto escuro confortável para os olhos */
+    color: #eeeeee; /* Texto claro para leitura no escuro */
 }
 
+/* NAVBAR BRANCA - Inspirada no modelo elegante que você mandou */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #1a1a1a;
-    color: white;
+    padding: 15px 40px;
+    background-color: #ffffff; /* Fundo branco limpo */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 10;
 }
 
+/* Garante que TODOS os links dentro do header fiquem escuros e visíveis na barra branca */
 header a {
-    color: white;
+    color: #1a1a1a !important; 
     margin-left: 20px;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
 
-.hero {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
-    text-align: center;
+/* BANNER COM ALTURA REDUZIDA (Para não cobrir a tela inteira e dar para ver o conteúdo abaixo) */
+.hero-banner {
+    position: relative;
+    height: 680px; /* Altura ideal menor, parecida com o site de referência */
+    width: 100%;
+    background-image: url('/img/banner-principal.jpg'); /* Nome da sua foto de exemplo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero h1 {
+/* Película escura sutil por cima da foto do banner para dar leitura perfeita ao texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.50); /* Escurece 50% da foto para destacar as letras brancas */
+    z-index: 1;
+}
+
+/* Caixa do texto que fica centralizada em cima do banner */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 300;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .conteudo-principal {
-    padding: 40px 20px;
+    padding: 80px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.8;
+}
+
+.conteudo-principal h2, .categorias h2 {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .categorias h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
 }
 
-/* Novo Grid alinhado e responsivo para os cards */
+/* Grid organizado com 3 colunas de cards */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Cria exatamente 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px 60px 20px;
+    padding: 0 20px 80px 20px;
 }
 
-/* O novo Bloco do Card - AGORA COM TRANSPARÊNCIA */
+/* Estrutura do card */
 .card-box {
-    background-color: rgba(0, 0, 0, 0.02); /* Fundo clarinho e transparente */
-    border-radius: 10px;
-    overflow: hidden; /* Força a foto a seguir as curvas dos cantos do card */
-    text-decoration: none; /* Remove de vez a cor azul e o sublinhado de link */
-    display: block; /* Garante que a foto fique em cima e o texto embaixo */
+    border-radius: 12px;
+    overflow: hidden; 
+    text-decoration: none; 
+    display: block; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.04); /* Sombra suave */
-    border: 1px solid rgba(0, 0, 0, 0.07); /* Bordinha bem fina e transparente para dar acabamento */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Efeito ao passar o mouse */
+/* Efeito interativo do card subindo levemente */
 .card-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-    background-color: rgba(0, 0, 0, 0.04); /* Escurece a transparência de leve no hover */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+    filter: brightness(1.15); /* Dá um leve destaque na cor ao passar o mouse */
 }
 
-/* Controla o tamanho perfeito da foto dentro do card */
 .card-box img {
     width: 100%;
-    height: 180px;
-    object-fit: cover; /* Faz a foto se adaptar sem esticar ou achatar */
+    height: 190px;
+    object-fit: cover; 
     display: block;
 }
 
-/* Estilo do Texto/Título do Card (abaixo da foto) - AJUSTADO PARA O FUNDO CLARO */
+/* Título interno do card, puxando a cor transparente do HTML */
 .card-box h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #222222; /* Texto escuro elegante para contrastar com o fundo claro */
+    color: #ffffff; /* Texto branco que combina com qualquer cor de fundo */
     font-size: 13px;
     font-weight: 700;
-    padding: 18px 15px;
+    padding: 20px 15px;
     margin: 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background-color: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente atrás do texto */
-    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Linha divisória sutil entre a foto e o texto */
+    background-color: rgba(0, 0, 0, 0.25); /* Filtro escuro para garantir leitura */
 }
 
 .pagina-interna {
@@ -113,8 +157,10 @@ header a {
 
 footer {
     text-align: center;
-    padding: 25px;
-    background-color: #eee;
+    padding: 30px;
+    background-color: #111111;
     font-size: 14px;
     color: #666;
+    border-top: 1px solid #1c1c1c;
 }
+
